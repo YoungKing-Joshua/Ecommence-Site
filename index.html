@@ -145,63 +145,67 @@
 
 			<section class="recommended-accommodations">
 				<h3>Our Services</h3>
-				<div class="accommodation-cards">
-					<div class="accommodation-card">
-						<img src="1.jpg" alt="Safari Lodge" />
-						<h3>Train Freight</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
+				<div class="carousel-container">
+					<button class="carousel-arrow left-arrow">&#9664;</button>
+					<div class="accommodation-cards">
+						<div class="accommodation-card">
+							<img src="1.jpg" alt="Safari Lodge" />
+							<h3>Train Freight</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
+						<div class="accommodation-card">
+							<img src="2.jpg" alt="Canopy Cabin" />
+							<h3>Road Freight</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
+						<div class="accommodation-card">
+							<img src="1.jpg" alt="Riverfront Tent" />
+							<h3>Ship Freight</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
+						<div class="accommodation-card">
+							<img src="2.jpg" alt="Forest Chalet" />
+							<h3>Transport Road</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
+						<div class="accommodation-card">
+							<img src="2.jpg" alt="Forest Chalet" />
+							<h3>Transport Road</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
+						<div class="accommodation-card">
+							<img src="1.jpg" alt="Safari Lodge" />
+							<h3>Train Freight</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
+						<div class="accommodation-card">
+							<img src="2.jpg" alt="Forest Chalet" />
+							<h3>Transport Road</h3>
+							<p>
+								It is a long established fact that a reader will be distracted by the readable
+								content of the page when looking at its layout.
+							</p>
+						</div>
 					</div>
-					<div class="accommodation-card">
-						<img src="2.jpg" alt="Canopy Cabin" />
-						<h3>Road Freight</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
-					</div>
-					<div class="accommodation-card">
-						<img src="1.jpg" alt="Riverfront Tent" />
-						<h3>Ship Freight</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
-					</div>
-					<div class="accommodation-card">
-						<img src="2.jpg" alt="Forest Chalet" />
-						<h3>Transport Road</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
-					</div>
-					<div class="accommodation-card">
-						<img src="2.jpg" alt="Forest Chalet" />
-						<h3>Transport Road</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
-					</div>
-					<div class="accommodation-card">
-						<img src="1.jpg" alt="Safari Lodge" />
-						<h3>Train Freight</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
-					</div>
-					<div class="accommodation-card">
-						<img src="2.jpg" alt="Forest Chalet" />
-						<h3>Transport Road</h3>
-						<p>
-							It is a long established fact that a reader will be distracted by the readable content
-							of the page when looking at its layout.
-						</p>
-					</div>
+					<button class="carousel-arrow right-arrow">&#9654;</button>
 				</div>
 			</section>
 		</main>
@@ -239,3 +243,17 @@
 		</footer>
 	</body>
 </html>
+
+<script>
+	const leftArrow = document.querySelector(".left-arrow");
+	const rightArrow = document.querySelector(".right-arrow");
+	const cardsContainer = document.querySelector(".accommodation-cards");
+
+	leftArrow.addEventListener("click", () => {
+		cardsContainer.scrollBy({ left: -300, behavior: "smooth" });
+	});
+
+	rightArrow.addEventListener("click", () => {
+		cardsContainer.scrollBy({ left: 300, behavior: "smooth" });
+	});
+</script>

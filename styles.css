@@ -699,11 +699,25 @@ html {
 	}
 }
 
+.carousel-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	width: 100%;
+}
+
 .accommodation-cards {
 	display: flex;
 	gap: 20px;
-	justify-content: center;
-	flex-wrap: wrap;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.accommodation-cards::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
 }
 
 .accommodation-card {
@@ -714,6 +728,7 @@ html {
 	border-radius: 8px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: transform 0.3s;
+	flex: 0 0 auto; /* Ensures the cards stay the same size in the flex container */
 }
 
 .accommodation-card img {
@@ -726,8 +741,30 @@ html {
 	margin: 10px 0;
 	font-size: 16px;
 }
+
 .accommodation-card:hover {
 	transform: scale(1.05);
+}
+
+.carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	z-index: 1;
+}
+
+.left-arrow {
+	left: 10px;
+}
+
+.right-arrow {
+	right: 10px;
 }
 
 .special-offers .join-now {
