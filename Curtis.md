@@ -1,7 +1,3 @@
-Here’s the updated **README** file based on the additional information about your dataset and project objective:
-
----
-
 # World-News-Classification
 
 ## Overview
