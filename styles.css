@@ -5,6 +5,7 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	background-color: #f9f9f9;
 }
 
 header {
@@ -23,6 +24,7 @@ header .logo h1 {
 	margin: 0;
 	font-size: 1.5em;
 	font-weight: bold;
+	color: #6a0dad;
 }
 
 header nav ul {
@@ -56,14 +58,15 @@ header .auth-buttons .login {
 }
 
 header .auth-buttons .explore {
-	background-color: #f0f0f0;
-	color: black;
+	background-color: #e0e0f0;
+	color: #6a0dad;
 }
 
 header .auth-buttons .login {
-	background-color: #0047ab;
+	background-color: #6a0dad;
 	color: white;
 }
+
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -80,6 +83,7 @@ html {
 }
 
 .hero {
+	background-color: #6a0dad;
 	position: relative;
 	text-align: left;
 	color: white;
@@ -138,7 +142,7 @@ html {
 
 .btn-primary {
 	background-color: white;
-	color: #002d62; /* Dark blue color */
+	color: #6a0dad; /* Dark blue color */
 }
 
 .btn-primary:hover {
@@ -177,9 +181,10 @@ html {
 .tracking-left {
 	background: linear-gradient(
 		135deg,
-		rgba(209, 136, 29, 0.7) 0%,
-		rgba(255, 193, 7, 0.7) 100%
-	); /* Gradient background with transparency */
+		rgba(106, 13, 173, 0.7) 0%,
+		rgba(138, 43, 226, 0.7) 100%
+	); /* Purple gradient */
+	/* Gradient background with transparency */
 	color: #fff;
 	padding: 40px;
 	display: flex;
@@ -215,7 +220,7 @@ html {
 }
 
 .tracking-right button {
-	background-color: #0047ab; /* Dark blue background color */
+	background-color: #6a0dad; /* Dark blue background color */
 	color: #fff;
 	border: none;
 	cursor: pointer;
@@ -252,7 +257,7 @@ html {
 
 .categories h2 {
 	font-size: 2rem;
-	color: #a0a0a0;
+	color: #6a0dad;
 	margin-bottom: 20px;
 }
 
@@ -263,7 +268,7 @@ html {
 }
 
 .category {
-	background-color: #00418b; /* Light pink background */
+	background-color: #6400fa; /* Light pink background */
 	padding: 10px;
 	border-radius: 20px;
 	text-align: center;
@@ -318,7 +323,7 @@ html {
 
 .product-card {
 	position: relative;
-	border: 1px solid #002d62;
+	border: 1px solid #6a0dad;
 	border-radius: 8px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
@@ -349,7 +354,7 @@ html {
 	left: 50%;
 	transform: translateX(-50%);
 	padding: 10px 20px;
-	background-color: #002d62;
+	background-color: #6a0dad;
 	border: none;
 	color: white;
 	border-radius: 5px;
