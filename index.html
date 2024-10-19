@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ecommence</title>
+		<title>TradeSwift Ecommence</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
@@ -14,242 +14,37 @@
 			<nav>
 				<ul>
 					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Service</a></li>
-					<li><a href="#">Pages</a></li>
-					<li><a href="#">Blog</a></li>
+					<li>
+						<a href="#">Categories</a>
+						<ul class="dropdown">
+							<li><a href="#">Men's Clothing</a></li>
+							<li><a href="#">Women's Clothing</a></li>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Home & Kitchen</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Deals</a></li>
+					<li><a href="#">New Arrivals</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>
-			<div class="auth-buttons">
-				<button class="explore">Tracking Product</button>
-				<button class="login">Login</button>
+			<div class="cart">
+				<a href="#">
+					<img src="cart-icon.png" alt="Cart" />
+					<span class="cart-count">0</span>
+				</a>
+			</div>
+			<div class="right-section">
+				<div class="search-bar">
+					<input type="text" placeholder="Search for products..." />
+					<button class="search-button">Search</button>
+				</div>
+
+				<!-- <div class="auth-buttons">
+          <button class="explore">Track Order</button>
+          <button class="login">Login</button>
+        </div> -->
 			</div>
 		</header>
-
-		<main>
-			<section class="hero">
-				<div class="hero-text">
-					<h2>
-						<span class="highlight-orange">Fast</span> &
-						<span class="highlight-orange">reliable</span> service all <br />
-						over the <span class="highlight-orange">world</span>
-					</h2>
-					<p>
-						Your attitude will go a long way in determining your success, your recognition, your
-						reputation, and your <br />
-						enjoyment in being a lawyer.
-					</p>
-					<!-- <div class="hero-buttons">
-						<a href="#" class="btn btn-primary">Know More</a>
-						<a href="#" class="btn btn-secondary">Our History</a>
-					</div> -->
-				</div>
-
-				<!-- <div class="search-container">
-					<div class="tracking">
-						<div class="tracking-left">
-							<span>Tracking your product in this way</span>
-						</div>
-						<div class="tracking-right">
-							<input type="text" placeholder="Tracking number" />
-							<button>Track & Trace</button>
-						</div>
-					</div>
-				</div> -->
-			</section>
-			<section class="categories">
-				<h2>Categories</h2>
-				<div class="category-list">
-					<div class="category">
-						<p>Home &</p>
-						<img src="assets/mansion.png" alt="Home &" />
-					</div>
-					<div class="category">
-						<p>Beauty &</p>
-						<img src="assets/beauty.png" alt="Beauty &" />
-					</div>
-					<div class="category">
-						<p>Food &</p>
-						<img src="assets/fast-food.png" alt="Food & Drink" />
-					</div>
-					<div class="category">
-						<p>Fashion &</p>
-						<img src="assets/brand.png" alt="Fashion &" />
-					</div>
-					<div class="category">
-						<p>Outdoor &</p>
-						<img src="assets/products.png" alt="Outdoor &" />
-					</div>
-					<div class="category">
-						<p>Baby &</p>
-						<img src="assets/house.png" alt="Baby & Kids" />
-					</div>
-				</div>
-			</section>
-
-			<section class="featured-products">
-				<h2>Featured Products</h2>
-				<div class="product-grid">
-					<div class="product-card">
-						<img src="assets/car.jpg" alt="Product 1" />
-						<p>Product 1 Name</p>
-						<button>Shop Now</button>
-					</div>
-					<div class="product-card">
-						<img src="assets/house.jpg" alt="Product 2" />
-						<p>Product 2 Name</p>
-						<button>Shop Now</button>
-					</div>
-					<div class="product-card">
-						<img src="assets/aircondition.jpg" alt="Product 3" />
-						<p>Product 3 Name</p>
-						<button>Shop Now</button>
-					</div>
-					<div class="product-card">
-						<img src="assets/tv.jpg" alt="Product 4" />
-						<p>Product 4 Name</p>
-						<button>Shop Now</button>
-					</div>
-					<div class="product-card">
-						<img src="assets/shoe.jpg" alt="Product 5" />
-						<p>Product 5 Name</p>
-						<button>Shop Now</button>
-					</div>
-					<div class="product-card">
-						<img src="assets/car (2).jpg" alt="Product 6" />
-						<p>Product 6 Name</p>
-						<button>Shop Now</button>
-					</div>
-				</div>
-			</section>
-
-			<!-- <section class="service-section">
-				<div class="s-container">
-					<div class="service-header">
-						<p class="subtitle">OUR SERVICES WHAT WE PROVIDE</p>
-						<h1 class="service-title">
-							<span class="highlight-blue">ShipTrack</span>
-							<span class="highlight-orange">Service</span>
-						</h1>
-					</div>
-					<div class="service-content">
-						<p>
-							Innovation needs to be part of your culture. Consumers are transforming faster than we
-							are, and if we don’t catch up, we’re in trouble. Azer duskam Innovation needs to be
-							part of your culture. Consumers are transforming faster than we are.
-						</p>
-					</div>
-				</div>
-			</section> -->
-
-			<section class="recommended-accommodations">
-				<div class="carousel-header">
-					<h3>Our Services</h3>
-					<div>
-						<button class="carousel-arrow left-arrow">&lt;</button>
-						<button class="carousel-arrow right-arrow">&gt;</button>
-					</div>
-				</div>
-				<div class="carousel-container">
-					<div class="accommodation-cards">
-						<div class="accommodation-card">
-							<img src="1.jpg" alt="Safari Lodge" />
-							<h3>Train Freight</h3>
-							<p>
-								It is a long established fact that a reader will be distracted by the readable
-								content of the page when looking at its layout.
-							</p>
-						</div>
-						<div class="accommodation-card">
-							<img src="2.jpg" alt="Canopy Cabin" />
-							<h3>Road Freight</h3>
-							<p>
-								It is a long established fact that a reader will be distracted by the readable
-								content of the page when looking at its layout.
-							</p>
-						</div>
-						<div class="accommodation-card">
-							<img src="1.jpg" alt="Riverfront Tent" />
-							<h3>Ship Freight</h3>
-							<p>
-								It is a long established fact that a reader will be distracted by the readable
-								content of the page when looking at its layout.
-							</p>
-						</div>
-						<div class="accommodation-card">
-							<img src="1.jpg" alt="Safari Lodge" />
-							<h3>Train Freight</h3>
-							<p>
-								It is a long established fact that a reader will be distracted by the readable
-								content of the page when looking at its layout.
-							</p>
-						</div>
-						<div class="accommodation-card">
-							<img src="2.jpg" alt="Canopy Cabin" />
-							<h3>Road Freight</h3>
-							<p>
-								It is a long established fact that a reader will be distracted by the readable
-								content of the page when looking at its layout.
-							</p>
-						</div>
-						<div class="accommodation-card">
-							<img src="1.jpg" alt="Riverfront Tent" />
-							<h3>Ship Freight</h3>
-							<p>
-								It is a long established fact that a reader will be distracted by the readable
-								content of the page when looking at its layout.
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<footer>
-			<div class="footer-container">
-				<div class="footer-column">
-					<h3>TRACK PACKAGE</h3>
-				</div>
-				<div class="footer-column">
-					<ul>
-						<li><a href="#">Track Order</a></li>
-						<li><a href="#">Location Check</a></li>
-						<li><a href="#">Social Media</a></li>
-						<li><a href="#">Professional</a></li>
-					</ul>
-				</div>
-				<div class="footer-column">
-					<ul>
-						<li><a href="#">Get Support</a></li>
-						<li><a href="#">Partner with us</a></li>
-						<li><a href="#">Join our Network</a></li>
-						<li><a href="#">Become a Delivery</a></li>
-					</ul>
-				</div>
-				<div class="footer-column">
-					<ul>
-						<li><a href="#">Latest Updates</a></li>
-						<li><a href="#">Purchase Gift Card</a></li>
-						<li><a href="#">Local Delivery Services</a></li>
-						<li><a href="#">First Order Discount</a></li>
-					</ul>
-				</div>
-			</div>
-		</footer>
 	</body>
 </html>
-
-<script>
-	const leftArrow = document.querySelector(".left-arrow");
-	const rightArrow = document.querySelector(".right-arrow");
-	const cardsContainer = document.querySelector(".accommodation-cards");
-
-	leftArrow.addEventListener("click", () => {
-		cardsContainer.scrollBy({ left: -300, behavior: "smooth" });
-	});
-
-	rightArrow.addEventListener("click", () => {
-		cardsContainer.scrollBy({ left: 300, behavior: "smooth" });
-	});
-</script>
