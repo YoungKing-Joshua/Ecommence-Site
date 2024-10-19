@@ -41,18 +41,18 @@ header nav ul {
 	padding: 0;
 	display: flex;
 	align-items: center;
-	gap: 20px;
 }
 
 header nav ul li {
 	position: relative;
+	margin-left: 10px;
 }
 
 header nav ul li a {
 	text-decoration: none;
 	color: #333;
 	font-size: 1em;
-	padding: 10px 15px;
+	padding: 10px 10px;
 	transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -168,5 +168,115 @@ header .cart .cart-count {
 		margin-top: 10px;
 		width: 100%;
 		justify-content: space-between;
+	}
+}
+
+/* considerably 
+a large amount 
+of space for 
+next section */
+/* Hero Section */
+.hero {
+	border-radius: 5px;
+	margin: 0 10px; /* Combine left and right margins */
+	position: relative;
+	text-align: left;
+	color: white;
+	height: 60vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Slider Container */
+.slider {
+	display: flex;
+	transition: transform 0.5s ease;
+	width: 300%; /* For 3 images */
+	position: absolute; /* Use absolute positioning for the slider */
+	top: 0; /* Position it on top */
+	left: 0; /* Start from the left */
+}
+
+/* Slide Images */
+.slide {
+	width: 100vw; /* Full viewport width for each image */
+	height: 60vh; /* Match the hero height */
+	object-fit: cover; /* Ensure the image covers the area */
+}
+
+/* Overlay for better text visibility */
+.hero::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+/* Hero Text */
+.hero-text {
+	position: relative; /* Keep text above the background */
+	z-index: 2; /* Ensure text appears above the overlay */
+}
+
+.hero-text h2 {
+	font-size: 2.5em;
+	margin-bottom: 10px;
+}
+
+.hero-text p {
+	font-size: 1.2em;
+	margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+	display: flex;
+	margin-top: 20px; /* Space between the welcome message and the search bar */
+}
+
+.search-bar input[type="text"] {
+	padding: 10px;
+	width: 250px; /* Adjust width as needed */
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-right: 10px; /* Space between input and button */
+}
+
+.search-bar .search-btn {
+	padding: 10px 20px;
+	border: none;
+	background-color: rgb(3, 20, 117);
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.search-bar .search-btn:hover {
+	background-color: rgb(2, 14, 85);
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+	.hero {
+		height: 40vh; /* Reduce height on smaller screens */
+	}
+
+	.hero-text h2 {
+		font-size: 2em; /* Adjust font size */
+	}
+
+	.hero-text p {
+		font-size: 1em; /* Adjust font size */
 	}
 }

@@ -42,5 +42,42 @@
 				</div>
 			</div>
 		</header>
+		<main>
+			<section class="hero">
+				<div class="slider">
+					<img src="assets/shoe-1.jpg" alt="Image 1" class="slide" />
+					<img src="assets/car (2).jpg" alt="Image 2" class="slide" />
+					<img src="assets/house.jpg" alt="Image 3" class="slide" />
+				</div>
+				<div class="hero-text">
+					<h2>Welcome to TradeSwift</h2>
+					<p>Discover amazing deals on your favorite products!</p>
+
+					<!-- Search Bar Section -->
+					<div class="search-bar">
+						<input type="text" placeholder="Search for items..." />
+						<button class="search-btn">Search</button>
+					</div>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
+<script>
+	let currentIndex = 0;
+	const slides = document.querySelectorAll(".slide");
+	const totalSlides = slides.length;
+
+	function showSlide(index) {
+		const slider = document.querySelector(".slider");
+		slider.style.transform = `translateX(-${index * 100}%)`; // Translate to show the current slide
+	}
+
+	function nextSlide() {
+		currentIndex = (currentIndex + 1) % totalSlides;
+		showSlide(currentIndex);
+	}
+
+	showSlide(currentIndex); // Show the first slide
+	setInterval(nextSlide, 5000); // Change slide every 5 seconds
+</script>
