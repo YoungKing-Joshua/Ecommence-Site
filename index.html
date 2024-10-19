@@ -42,12 +42,18 @@
 				</div>
 			</div>
 		</header>
+
 		<main>
 			<section class="hero">
 				<div class="slider">
-					<img src="assets/shoe-1.jpg" alt="Image 1" class="slide" />
-					<img src="assets/car (2).jpg" alt="Image 2" class="slide" />
-					<img src="assets/house.jpg" alt="Image 3" class="slide" />
+					<img src="assets/shoe-1.jpg" alt="Fashionable running shoes" class="slide" />
+					<img src="assets/car (2).jpg" alt="Latest model of electric car" class="slide" />
+					<img src="assets/house.jpg" alt="Beautiful modern home" class="slide" />
+				</div>
+				<div class="slider-indicators">
+					<span class="indicator active" onclick="showSlide(0)"></span>
+					<span class="indicator" onclick="showSlide(1)"></span>
+					<span class="indicator" onclick="showSlide(2)"></span>
 				</div>
 				<div class="hero-text">
 					<h2>Welcome to TradeSwift</h2>
@@ -61,23 +67,46 @@
 				</div>
 			</section>
 		</main>
+
+		<script>
+			let currentIndex = 0;
+			const slides = document.querySelectorAll(".slide");
+			const totalSlides = slides.length;
+
+			function showSlide(index) {
+				slides.forEach((slide, i) => {
+					slide.style.transform = `translateX(-${index * 100}%)`;
+					document.querySelectorAll(".indicator")[i].classList.toggle("active", i === index);
+				});
+			}
+
+			function nextSlide() {
+				currentIndex = (currentIndex + 1) % totalSlides;
+				showSlide(currentIndex);
+			}
+
+			showSlide(currentIndex); // Show the first slide
+			setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+			// Dropdown functionality on smaller screens
+			document.querySelectorAll("header nav ul li a").forEach((link) => {
+				link.addEventListener("click", function (e) {
+					const dropdown = this.nextElementSibling;
+					if (dropdown && dropdown.classList.contains("dropdown")) {
+						e.preventDefault();
+						dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+					}
+				});
+			});
+
+			// Add to cart functionality
+			let cartCount = 0;
+			const cartIcon = document.querySelector(".cart .cart-count");
+
+			function addToCart() {
+				cartCount++;
+				cartIcon.textContent = cartCount;
+			}
+		</script>
 	</body>
 </html>
-<script>
-	let currentIndex = 0;
-	const slides = document.querySelectorAll(".slide");
-	const totalSlides = slides.length;
-
-	function showSlide(index) {
-		const slider = document.querySelector(".slider");
-		slider.style.transform = `translateX(-${index * 100}%)`; // Translate to show the current slide
-	}
-
-	function nextSlide() {
-		currentIndex = (currentIndex + 1) % totalSlides;
-		showSlide(currentIndex);
-	}
-
-	showSlide(currentIndex); // Show the first slide
-	setInterval(nextSlide, 5000); // Change slide every 5 seconds
-</script>

@@ -5,6 +5,7 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	background-color: #f5f6f9; /* Light background */
+	overflow-y: scroll; /* Prevent layout shift due to scrollbar */
 }
 
 /* Header Styling */
@@ -152,29 +153,6 @@ header .cart .cart-count {
 	background-color: rgb(2, 14, 85);
 }
 
-/* Media Query for Responsiveness */
-@media (max-width: 768px) {
-	header {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	nav ul {
-		flex-direction: column;
-		gap: 10px;
-	}
-
-	.right-section {
-		margin-top: 10px;
-		width: 100%;
-		justify-content: space-between;
-	}
-}
-
-/* considerably 
-a large amount 
-of space for 
-next section */
 /* Hero Section */
 .hero {
 	border-radius: 5px;
@@ -199,33 +177,49 @@ next section */
 	display: flex;
 	transition: transform 0.5s ease;
 	width: 300%; /* For 3 images */
-	position: absolute; /* Use absolute positioning for the slider */
-	top: 0; /* Position it on top */
-	left: 0; /* Start from the left */
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 /* Slide Images */
 .slide {
 	width: 100vw; /* Full viewport width for each image */
 	height: 60vh; /* Match the hero height */
-	object-fit: cover; /* Ensure the image covers the area */
+	object-fit: cover;
 }
 
-/* Overlay for better text visibility */
-.hero::before {
-	content: "";
+/* Slider Indicators */
+.slider-indicators {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+	z-index: 2;
+}
+
+.indicator {
+	width: 12px;
+	height: 12px;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+	background-color: white;
 }
 
 /* Hero Text */
 .hero-text {
-	position: relative; /* Keep text above the background */
-	z-index: 2; /* Ensure text appears above the overlay */
+	position: absolute;
+	z-index: 2;
+	margin-left: 10%;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text h2 {
@@ -238,45 +232,73 @@ next section */
 	margin-bottom: 20px;
 }
 
-/* Search Bar */
-.search-bar {
-	display: flex;
-	margin-top: 20px; /* Space between the welcome message and the search bar */
-}
-
-.search-bar input[type="text"] {
-	padding: 10px;
-	width: 250px; /* Adjust width as needed */
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	margin-right: 10px; /* Space between input and button */
-}
-
-.search-bar .search-btn {
-	padding: 10px 20px;
+/* Buttons in Hero */
+.hero-text .search-bar input[type="text"] {
+	width: 300px;
 	border: none;
-	background-color: rgb(3, 20, 117);
-	color: white;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+	border-radius: 5px 0 0 5px;
 }
 
-.search-bar .search-btn:hover {
-	background-color: rgb(2, 14, 85);
+.hero-text .search-btn {
+	border-radius: 0 5px 5px 0;
 }
 
-/* Media Query for Responsiveness */
+/* Media Queries */
 @media (max-width: 768px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	header nav ul {
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	header nav ul li {
+		margin-left: 0;
+	}
+
+	.right-section {
+		width: 100%;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+
 	.hero {
-		height: 40vh; /* Reduce height on smaller screens */
+		height: 50vh;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.hero-text {
+		margin-left: 0;
 	}
 
 	.hero-text h2 {
-		font-size: 2em; /* Adjust font size */
+		font-size: 2em;
 	}
 
 	.hero-text p {
-		font-size: 1em; /* Adjust font size */
+		font-size: 1em;
+	}
+
+	.search-bar input[type="text"] {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	header .logo h1 {
+		font-size: 1.2em;
+	}
+
+	header nav ul li a {
+		font-size: 0.9em;
+	}
+
+	.hero-text h2 {
+		font-size: 1.5em;
 	}
 }
