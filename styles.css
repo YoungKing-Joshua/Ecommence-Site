@@ -230,7 +230,8 @@ header .cart .cart-count {
 
 .hero-text p {
 	font-size: 1.2em;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+	text-align: center;
 }
 
 /* Buttons in Hero */
