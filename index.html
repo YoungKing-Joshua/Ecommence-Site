@@ -91,47 +91,243 @@
 					</div>
 				</div>
 			</section>
+			<section class="featured-products">
+				<h2>Trending Now</h2>
+				<div class="product-grid">
+					<div class="product-card">
+						<img src="assets/car.jpg" alt="Product 1" />
+						<div class="product-info">
+							<p>Product 1 Name</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img src="assets/house.jpg" alt="Product 2" />
+						<div class="product-info">
+							<p>Product 2 Name</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img src="assets/aircondition.jpg" alt="Product 3" />
+						<div class="product-info">
+							<p>Product 3 Name</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img src="assets/tv.jpg" alt="Product 4" />
+						<div class="product-info">
+							<p>Product 4 Name</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img src="assets/shoe.jpg" alt="Product 5" />
+						<div class="product-info">
+							<p>Product 5 Name</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img src="assets/car (2).jpg" alt="Product 6" />
+						<div class="product-info">
+							<p>Product 6 Name</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="special-offers">
+				<div class="special-offers-header">
+					<h2>
+						Special Offers
+						<span class="arrows">
+							<button id="prev">&lt;</button>
+							<button id="next">&gt;</button>
+						</span>
+					</h2>
+				</div>
+				<div class="offer-carousel">
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<div class="offer-card">
+						<img src="assets/offer1.jpg" alt="Special Offer 1" />
+						<div class="offer-info">
+							<p>50% off on Item 1</p>
+						</div>
+					</div>
+					<!-- Add more offer cards -->
+				</div>
+			</section>
 		</main>
 
-		<script>
-			let currentIndex = 0;
-			const slides = document.querySelectorAll(".slide");
-			const totalSlides = slides.length;
-
-			function showSlide(index) {
-				slides.forEach((slide, i) => {
-					slide.style.transform = `translateX(-${index * 100}%)`;
-					document.querySelectorAll(".indicator")[i].classList.toggle("active", i === index);
-				});
-			}
-
-			function nextSlide() {
-				currentIndex = (currentIndex + 1) % totalSlides;
-				showSlide(currentIndex);
-			}
-
-			showSlide(currentIndex); // Show the first slide
-			setInterval(nextSlide, 5000); // Change slide every 5 seconds
-
-			// Dropdown functionality on smaller screens
-			document.querySelectorAll("header nav ul li a").forEach((link) => {
-				link.addEventListener("click", function (e) {
-					const dropdown = this.nextElementSibling;
-					if (dropdown && dropdown.classList.contains("dropdown")) {
-						e.preventDefault();
-						dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-					}
-				});
-			});
-
-			// Add to cart functionality
-			let cartCount = 0;
-			const cartIcon = document.querySelector(".cart .cart-count");
-
-			function addToCart() {
-				cartCount++;
-				cartIcon.textContent = cartCount;
-			}
-		</script>
+		<footer class="site-footer">
+			<div class="footer-content">
+				<div class="footer-section about">
+					<h3>About TradeSwift</h3>
+					<p>
+						Your go-to online store for a vast range of quality products. Enjoy a seamless shopping
+						experience with unbeatable offers!
+					</p>
+				</div>
+				<div class="footer-section links">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Categories</a></li>
+						<li><a href="#">Deals</a></li>
+						<li><a href="#">New Arrivals</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+				<div class="footer-section customer-service">
+					<h3>Customer Service</h3>
+					<ul>
+						<li><a href="#">Help Center</a></li>
+						<li><a href="#">Order Tracking</a></li>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">Shipping Info</a></li>
+						<li><a href="#">FAQs</a></li>
+					</ul>
+				</div>
+				<div class="footer-section social">
+					<h3>Follow Us</h3>
+					<div class="social-icons">
+						<a href="#"><img src="assets/facebook-icon.png" alt="Facebook" /></a>
+						<a href="#"><img src="assets/twitter-icon.png" alt="Twitter" /></a>
+						<a href="#"><img src="assets/instagram-icon.png" alt="Instagram" /></a>
+						<a href="#"><img src="assets/linkedin-icon.png" alt="LinkedIn" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2024 TradeSwift. All rights reserved.</p>
+			</div>
+		</footer>
 	</body>
 </html>
+
+<script>
+	let currentIndex = 0;
+	const slides = document.querySelectorAll(".slide");
+	const totalSlides = slides.length;
+
+	function showSlide(index) {
+		slides.forEach((slide, i) => {
+			slide.style.transform = `translateX(-${index * 100}%)`;
+			document.querySelectorAll(".indicator")[i].classList.toggle("active", i === index);
+		});
+	}
+
+	function nextSlide() {
+		currentIndex = (currentIndex + 1) % totalSlides;
+		showSlide(currentIndex);
+	}
+
+	showSlide(currentIndex); // Show the first slide
+	setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+	// Dropdown functionality on smaller screens
+	document.querySelectorAll("header nav ul li a").forEach((link) => {
+		link.addEventListener("click", function (e) {
+			const dropdown = this.nextElementSibling;
+			if (dropdown && dropdown.classList.contains("dropdown")) {
+				e.preventDefault();
+				dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+			}
+		});
+	});
+
+	// Add to cart functionality
+	let cartCount = 0;
+	const cartIcon = document.querySelector(".cart .cart-count");
+
+	function addToCart() {
+		cartCount++;
+		cartIcon.textContent = cartCount;
+	}
+</script>
+
+<script>
+	const carousel = document.querySelector(".offer-carousel");
+	const prevButton = document.getElementById("prev");
+	const nextButton = document.getElementById("next");
+	let autoScrollInterval;
+	const scrollAmount = 320; // Adjust based on card width
+	const autoScrollDelay = 3000; // 3 seconds for auto-scroll
+	let autoScrollPaused = false;
+
+	// Function to scroll the carousel
+	function scrollCarousel(amount) {
+		carousel.scrollBy({ left: amount, behavior: "smooth" });
+	}
+
+	// Auto-scroll function
+	function startAutoScroll() {
+		autoScrollInterval = setInterval(() => {
+			if (!autoScrollPaused) {
+				scrollCarousel(scrollAmount);
+			}
+		}, autoScrollDelay);
+	}
+
+	// Pause auto-scroll on manual click and resume after delay
+	function pauseAutoScroll() {
+		autoScrollPaused = true;
+		clearTimeout(autoScrollInterval); // Clear previous interval if any
+		setTimeout(() => {
+			autoScrollPaused = false;
+		}, autoScrollDelay);
+	}
+
+	// Left arrow manual scroll
+	prevButton.addEventListener("click", () => {
+		scrollCarousel(-scrollAmount);
+		pauseAutoScroll();
+	});
+
+	// Right arrow manual scroll
+	nextButton.addEventListener("click", () => {
+		scrollCarousel(scrollAmount);
+		pauseAutoScroll();
+	});
+
+	// Initialize auto-scroll
+	startAutoScroll();
+</script>
