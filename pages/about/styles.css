@@ -1,0 +1,192 @@
+/* Global Styling */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	color: #333;
+	background-color: #f7f7f7;
+	line-height: 1.6;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: #1a73e8;
+	color: #fff;
+}
+
+header .logo h1 {
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin: 0;
+}
+
+header nav ul {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+}
+
+header nav ul li {
+	position: relative;
+}
+
+header nav ul li a {
+	color: #fff;
+	font-weight: 500;
+	padding: 0.5rem;
+}
+
+header nav ul li a:hover {
+	color: #ffda79;
+}
+
+/* Main Content */
+main {
+	padding: 2rem;
+}
+
+/* Hero Section */
+.about-hero {
+	text-align: center;
+	padding: 3rem 1rem;
+	background-color: #e3f2fd;
+}
+
+.about-hero h2 {
+	font-size: 2.5rem;
+	color: #1a73e8;
+}
+
+.about-hero p {
+	font-size: 1.2rem;
+	color: #555;
+}
+
+/* About Content Section */
+.about-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.about-content .mission,
+.about-content .values,
+.about-content .benefits {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 2rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h3 {
+	font-size: 1.8rem;
+	color: #1a73e8;
+	margin-bottom: 1rem;
+}
+
+.about-content p,
+.about-content ul li {
+	font-size: 1rem;
+	color: #333;
+}
+
+.about-content ul {
+	list-style-type: disc;
+	padding-left: 1.5rem;
+}
+
+.about-content ul li {
+	margin-bottom: 0.5rem;
+}
+
+.benefits {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.benefit {
+	text-align: center;
+}
+
+.benefit img {
+	width: 60px;
+	margin-bottom: 1rem;
+}
+
+.benefit p {
+	font-size: 1rem;
+	color: #555;
+}
+
+/* Footer */
+.site-footer {
+	background-color: #333;
+	color: #fff;
+	padding: 2rem 0;
+}
+
+.site-footer .footer-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.site-footer .footer-section h3 {
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
+	color: #ffda79;
+}
+
+.site-footer .footer-section ul {
+	list-style-type: none;
+}
+
+.site-footer .footer-section ul li {
+	margin-bottom: 0.5rem;
+}
+
+.site-footer .footer-section ul li a {
+	color: #fff;
+	font-size: 1rem;
+}
+
+.site-footer .footer-section ul li a:hover {
+	color: #ffda79;
+}
+
+.site-footer .footer-section.social .social-icons a {
+	margin-right: 1rem;
+	display: inline-block;
+}
+
+.site-footer .footer-section.social img {
+	width: 30px;
+	height: 30px;
+}
+
+.footer-bottom {
+	text-align: center;
+	padding-top: 1rem;
+	font-size: 0.9rem;
+	color: #bbb;
+}
