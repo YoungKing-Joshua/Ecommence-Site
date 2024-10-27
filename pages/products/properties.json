@@ -1,0 +1,16 @@
+[
+	{
+		"image": "property1.jpg",
+		"price": "GHC 40,000",
+		"description": "City of David, an area with Luxe Free Plots at PRAMPRAM",
+		"location": "Greater Accra, Accra Metropolitan",
+		"size": "650 sqm"
+	},
+	{
+		"image": "property2.jpg",
+		"price": "GHC 19,000",
+		"description": "Beautiful Luxurious Half Plot at Prampram Beach Lane",
+		"location": "Greater Accra, Accra Metropolitan",
+		"size": "325 sqm"
+	}
+]
