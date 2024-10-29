@@ -1,0 +1,384 @@
+{
+	"categories": [
+		{
+			"id": 1,
+			"name": "Real Estate",
+			"subcategories": ["Houses for Sale", "Land for Sale", "Commercial Properties"],
+			"products": [
+				{
+					"name": "Luxury Villa",
+					"description": "Sea-view property in New York",
+					"price": 1146723,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Cozy Apartment",
+					"description": "Renovated property in Miami",
+					"price": 630304,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Modern Condo",
+					"description": "Renovated property in New York",
+					"price": 468193,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Cozy Apartment",
+					"description": "Sea-view property in Austin",
+					"price": 1113901,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Modern Condo",
+					"description": "Spacious property in New York",
+					"price": 1130105,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "Automotive",
+			"subcategories": ["Cars", "Motorcycles", "Car Accessories", "Car Parts & Tools"],
+			"products": [
+				{
+					"name": "Chevrolet Silverado",
+					"description": "Off-road Sedan with advanced features",
+					"price": 21187,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Honda Civic",
+					"description": "Luxury Truck with advanced features",
+					"price": 57028,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Chevrolet Silverado",
+					"description": "Luxury SUV with advanced features",
+					"price": 75181,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Ford Mustang",
+					"description": "Off-road Truck with advanced features",
+					"price": 47963,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Toyota Camry",
+					"description": "Luxury SUV with advanced features",
+					"price": 13448,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Fashion",
+			"subcategories": [
+				"Men\u2019s Clothing",
+				"Women\u2019s Clothing",
+				"Kids\u2019 Clothing",
+				"Shoes & Accessories"
+			],
+			"products": [
+				{
+					"name": "Running Shoes",
+					"description": "Stylish sporty wear from Nike",
+					"price": 140,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Evening Gown",
+					"description": "Stylish sporty wear from Adidas",
+					"price": 86,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Evening Gown",
+					"description": "Stylish casual wear from Adidas",
+					"price": 204,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Running Shoes",
+					"description": "Stylish casual wear from Adidas",
+					"price": 41,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Running Shoes",
+					"description": "Stylish sporty wear from Nike",
+					"price": 154,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "Electronics",
+			"subcategories": [
+				"Mobile Phones & Accessories",
+				"Computers & Tablets",
+				"Audio Devices",
+				"Smart Home Devices"
+			],
+			"products": [
+				{
+					"name": "Dell XPS 13",
+					"description": "Compact device with cutting-edge features",
+					"price": 1370,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Samsung Galaxy S21",
+					"description": "Budget-friendly device with cutting-edge features",
+					"price": 1299,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Amazon Echo",
+					"description": "Budget-friendly device with cutting-edge features",
+					"price": 843,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Amazon Echo",
+					"description": "Budget-friendly device with cutting-edge features",
+					"price": 655,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Amazon Echo",
+					"description": "Compact device with cutting-edge features",
+					"price": 1418,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 5,
+			"name": "Home & Living",
+			"subcategories": ["Furniture", "Home Decor", "Kitchen & Dining", "Bedding & Bath"],
+			"products": [
+				{
+					"name": "Memory Foam Mattress",
+					"description": "Modern design from Wayfair",
+					"price": 1072,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Sectional Sofa",
+					"description": "Modern design from Ikea",
+					"price": 786,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Sectional Sofa",
+					"description": "Elegant design from Ikea",
+					"price": 1190,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Wall Art",
+					"description": "Elegant design from Wayfair",
+					"price": 1380,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Memory Foam Mattress",
+					"description": "Modern design from Wayfair",
+					"price": 770,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 6,
+			"name": "Beauty & Health",
+			"subcategories": ["Skincare", "Hair Care", "Personal Care", "Supplements & Vitamins"],
+			"products": [
+				{
+					"name": "Vitamin C Tablets",
+					"description": "Hydrating product for daily use",
+					"price": 79,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Face Moisturizer",
+					"description": "Hydrating product for daily use",
+					"price": 39,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Vitamin C Tablets",
+					"description": "Cruelty-free product for daily use",
+					"price": 69,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Vitamin C Tablets",
+					"description": "Cruelty-free product for daily use",
+					"price": 86,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Hair Serum",
+					"description": "Hydrating product for daily use",
+					"price": 22,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 7,
+			"name": "Sports & Outdoors",
+			"subcategories": ["Activewear", "Fitness Equipment", "Outdoor Gear", "Sports Accessories"],
+			"products": [
+				{
+					"name": "Yoga Mat",
+					"description": "Durable weather-resistant gear",
+					"price": 106,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Camping Tent",
+					"description": "Durable high-performance gear",
+					"price": 275,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Tennis Racket",
+					"description": "Durable lightweight gear",
+					"price": 346,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Camping Tent",
+					"description": "Durable high-performance gear",
+					"price": 214,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Yoga Mat",
+					"description": "Durable lightweight gear",
+					"price": 410,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 8,
+			"name": "Toys & Kids",
+			"subcategories": ["Toys & Games", "Baby Essentials", "School Supplies"],
+			"products": [
+				{
+					"name": "Puzzle Game",
+					"description": "Fun and creative interactive toy",
+					"price": 64,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Lego Set",
+					"description": "Fun and creative interactive toy",
+					"price": 19,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Puzzle Game",
+					"description": "Fun and creative educational toy",
+					"price": 72,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Action Figure",
+					"description": "Fun and creative educational toy",
+					"price": 66,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Action Figure",
+					"description": "Fun and creative educational toy",
+					"price": 78,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 9,
+			"name": "Groceries & Gourmet",
+			"subcategories": ["Snacks & Beverages", "Cooking Essentials", "Specialty Foods"],
+			"products": [
+				{
+					"name": "Cold Brew Coffee",
+					"description": "Fresh healthy product",
+					"price": 7,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Cold Brew Coffee",
+					"description": "Fresh locally sourced product",
+					"price": 9,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Artisan Bread",
+					"description": "Fresh locally sourced product",
+					"price": 12,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Artisan Bread",
+					"description": "Fresh gourmet product",
+					"price": 13,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Artisan Bread",
+					"description": "Fresh locally sourced product",
+					"price": 26,
+					"image": "placeholder.jpg"
+				}
+			]
+		},
+		{
+			"id": 10,
+			"name": "Books & Media",
+			"subcategories": ["Books", "Movies & TV Shows", "Music"],
+			"products": [
+				{
+					"name": "Vinyl Record",
+					"description": "Inspirational content for all ages",
+					"price": 42,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Self-help Book",
+					"description": "Inspirational content for all ages",
+					"price": 44,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Self-help Book",
+					"description": "Award-winning content for all ages",
+					"price": 25,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Self-help Book",
+					"description": "Bestselling content for all ages",
+					"price": 20,
+					"image": "placeholder.jpg"
+				},
+				{
+					"name": "Vinyl Record",
+					"description": "Bestselling content for all ages",
+					"price": 44,
+					"image": "placeholder.jpg"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search Results</title>
+	</head>
+	<body>
+		<h1>Search Results</h1>
+		<div id="results"></div>
+
+		<script>
+			const searchQuery = localStorage.getItem("searchQuery");
+
+			fetch("data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					const resultsDiv = document.getElementById("results");
+					let found = false;
+
+					data.categories.forEach((category) => {
+						// Check if the search query matches the category name
+						if (category.name.toLowerCase().includes(searchQuery)) {
+							found = true;
+							const categoryDiv = document.createElement("div");
+							categoryDiv.innerHTML = `<h2>Category: ${category.name}</h2>`;
+							resultsDiv.appendChild(categoryDiv);
+						}
+
+						category.subcategories.forEach((subcategory) => {
+							// Check if the search query matches the subcategory name
+							if (subcategory.name.toLowerCase().includes(searchQuery)) {
+								found = true;
+								const subcategoryDiv = document.createElement("div");
+								subcategoryDiv.innerHTML = `<h3>Subcategory: ${subcategory.name}</h3>`;
+								resultsDiv.appendChild(subcategoryDiv);
+							}
+
+							subcategory.items.forEach((item) => {
+								// Check if the search query matches the product name
+								if (item.name.toLowerCase().includes(searchQuery)) {
+									found = true;
+									const itemDiv = document.createElement("div");
+									itemDiv.innerHTML = `<h3>Product: ${item.name}</h3><p>Brand: ${item.brand}</p><p>Price: ${item.price}</p>`;
+									resultsDiv.appendChild(itemDiv);
+								}
+							});
+						});
+					});
+
+					if (!found) {
+						resultsDiv.innerHTML = "<p>No matching results found.</p>";
+					}
+				});
+		</script>
+	</body>
+</html>

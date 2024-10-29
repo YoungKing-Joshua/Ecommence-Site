@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Homepage</title>
+	</head>
+	<body>
+		<h1>Welcome to Our E-commerce Site</h1>
+		<h2>Select a Category:</h2>
+		<div id="categories"></div>
+
+		<h2>Search for Products:</h2>
+		<input type="text" id="search-input" placeholder="Search products by name" />
+		<button onclick="searchProducts()">Search</button>
+
+		<script>
+			fetch("data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					const categoriesDiv = document.getElementById("categories");
+					data.categories.forEach((category) => {
+						const button = document.createElement("button");
+						button.textContent = category.name;
+						button.onclick = () => {
+							localStorage.setItem("selectedCategory", category.id);
+							window.location.href = "products.html";
+						};
+						categoriesDiv.appendChild(button);
+					});
+				});
+
+			function searchProducts() {
+				const searchQuery = document.getElementById("search-input").value.toLowerCase();
+				localStorage.setItem("searchQuery", searchQuery);
+				window.location.href = "search-results.html";
+			}
+		</script>
+	</body>
+</html>

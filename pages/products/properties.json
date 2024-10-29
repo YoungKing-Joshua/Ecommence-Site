@@ -12,5 +12,61 @@
 		"description": "Beautiful Luxurious Half Plot at Prampram Beach Lane",
 		"location": "Greater Accra, Accra Metropolitan",
 		"size": "325 sqm"
+	},
+	{
+		"image": "property3.jpg",
+		"price": "GHC 55,000",
+		"description": "Modern 4-bedroom house in East Legon",
+		"location": "Greater Accra, East Legon",
+		"size": "800 sqm"
+	},
+	{
+		"image": "property4.jpg",
+		"price": "GHC 32,000",
+		"description": "Spacious 3-bedroom apartment with sea view",
+		"location": "Greater Accra, Labadi",
+		"size": "600 sqm"
+	},
+	{
+		"image": "property5.jpg",
+		"price": "GHC 45,000",
+		"description": "Prime land for sale in Kasoa, near the main road",
+		"location": "Central Region, Kasoa",
+		"size": "1000 sqm"
+	},
+	{
+		"image": "property6.jpg",
+		"price": "GHC 29,000",
+		"description": "Charming 2-bedroom house in Accra Central",
+		"location": "Greater Accra, Accra Central",
+		"size": "400 sqm"
+	},
+	{
+		"image": "property7.jpg",
+		"price": "GHC 22,000",
+		"description": "Affordable plots available in Spintex",
+		"location": "Greater Accra, Spintex",
+		"size": "250 sqm"
+	},
+	{
+		"image": "property8.jpg",
+		"price": "GHC 50,000",
+		"description": "Luxury 5-bedroom villa with private pool",
+		"location": "Greater Accra, Tema",
+		"size": "1200 sqm"
+	},
+	{
+		"image": "property9.jpg",
+		"price": "GHC 27,000",
+		"description": "Cozy 1-bedroom apartment in Osu",
+		"location": "Greater Accra, Osu",
+		"size": "300 sqm"
+	},
+	{
+		"image": "property10.jpg",
+		"price": "GHC 15,000",
+		"description": "Vacant land in Amasaman, great for development",
+		"location": "Greater Accra, Amasaman",
+		"size": "600 sqm"
 	}
 ]

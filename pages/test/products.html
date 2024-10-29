@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Products</title>
+	</head>
+	<body>
+		<h1>Products</h1>
+		<div id="product-list"></div>
+
+		<script>
+			const selectedCategoryId = localStorage.getItem("selectedCategory");
+
+			fetch("data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					const productListDiv = document.getElementById("product-list");
+
+					// Find the category using the selected category ID
+					const selectedCategory = data.categories.find(
+						(category) => category.id == selectedCategoryId
+					);
+
+					if (selectedCategory) {
+						selectedCategory.products.forEach((product) => {
+							const productDiv = document.createElement("div");
+							productDiv.innerHTML = `
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price.toFixed(2)}</p>
+                            <img src="${product.image}" alt="${
+								product.name
+							}" style="width: 200px; height: auto;">
+                        `;
+							productListDiv.appendChild(productDiv);
+						});
+					} else {
+						productListDiv.innerHTML = "<p>No products found in this category.</p>";
+					}
+				})
+				.catch((error) => console.error("Error fetching data:", error));
+		</script>
+	</body>
+</html>
