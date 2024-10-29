@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Details</title>
+	</head>
+	<body>
+		<h1>Product Details</h1>
+		<div id="product-details"></div>
+		<button id="purchase-button">Purchase</button>
+
+		<script>
+			const selectedProductId = localStorage.getItem("selectedProductId");
+
+			fetch("data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					let product;
+					data.categories.some((category) =>
+						category.products.some((item) => {
+							if (item.id === selectedProductId) {
+								product = item;
+								return true;
+							}
+							return false;
+						})
+					);
+
+					if (product) {
+						document.getElementById("product-details").innerHTML = `
+                        <h2>${product.name}</h2>
+                        <img src="assets/${product.image}" alt="${product.name}" />
+                        <p>${product.description}</p>
+                        <p>Price: $${product.price}</p>
+                        <p>Subcategory: ${product.subcategory}</p>
+                    `;
+					} else {
+						document.getElementById("product-details").innerHTML = "<p>Product not found.</p>";
+					}
+				});
+
+			document.getElementById("purchase-button").onclick = function () {
+				alert("Purchase function not yet implemented.");
+			};
+		</script>
+	</body>
+</html>

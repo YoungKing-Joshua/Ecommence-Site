@@ -7,51 +7,54 @@
 	</head>
 	<body>
 		<h1>Search Results</h1>
-		<div id="results"></div>
+		<div id="search-results"></div>
 
 		<script>
-			const searchQuery = localStorage.getItem("searchQuery").toLowerCase();
+			const searchQuery = localStorage.getItem("searchQuery");
 
 			fetch("data.json")
 				.then((response) => response.json())
 				.then((data) => {
-					const resultsDiv = document.getElementById("results");
-					let found = false;
+					const resultsDiv = document.getElementById("search-results");
+					const searchResults = [];
 
 					data.categories.forEach((category) => {
-						// Check if the search query matches the category name
-						if (category.name.toLowerCase().includes(searchQuery)) {
-							found = true;
-							const categoryDiv = document.createElement("div");
-							categoryDiv.innerHTML = `<h2>Category: ${category.name}</h2>`;
-							resultsDiv.appendChild(categoryDiv);
-						}
-
-						// Search within subcategories and products
 						category.products.forEach((product) => {
-							const matchesName = product.name.toLowerCase().includes(searchQuery);
-							const matchesDescription = product.description.toLowerCase().includes(searchQuery);
-							const matchesSubcategory = product.subcategory.toLowerCase().includes(searchQuery);
+							const nameMatch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+							const categoryMatch = category.name.toLowerCase().includes(searchQuery.toLowerCase());
+							const subcategoryMatch = product.subcategory
+								.toLowerCase()
+								.includes(searchQuery.toLowerCase());
 
-							if (matchesName || matchesDescription || matchesSubcategory) {
-								found = true;
-								const productDiv = document.createElement("div");
-								productDiv.innerHTML = `
-                                <h3>${product.name}</h3>
-                                <p>${product.description}</p>
-                                <p>Price: $${product.price}</p>
-                                <p>Subcategory: ${product.subcategory}</p>
-                                <img src="${product.image}" alt="${product.name}" width="100">
-                            `;
-								resultsDiv.appendChild(productDiv);
+							if (nameMatch || categoryMatch || subcategoryMatch) {
+								searchResults.push({ ...product, categoryName: category.name });
 							}
 						});
 					});
 
-					if (!found) {
-						resultsDiv.innerHTML = "<p>No matching results found.</p>";
+					if (searchResults.length > 0) {
+						searchResults.forEach((product) => {
+							const productDiv = document.createElement("div");
+							productDiv.innerHTML = `
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price.toFixed(2)}</p>
+                            <img src="${product.image}" alt="${
+								product.name
+							}" style="width: 100px; height: auto;">
+                            <button onclick="viewProduct('${product.id}')">View Details</button>
+                        `;
+							resultsDiv.appendChild(productDiv);
+						});
+					} else {
+						resultsDiv.innerHTML = "<p>No products found matching your search.</p>";
 					}
 				});
+
+			function viewProduct(productId) {
+				localStorage.setItem("selectedProductId", productId);
+				window.location.href = "product-details.html";
+			}
 		</script>
 	</body>
 </html>
