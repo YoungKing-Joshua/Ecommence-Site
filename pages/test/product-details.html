@@ -7,41 +7,59 @@
 	</head>
 	<body>
 		<h1>Product Details</h1>
-		<div id="product-details"></div>
-		<button id="purchase-button">Purchase</button>
+		<div id="product-details">Loading product details...</div>
+		<button id="purchase-button" style="display: none">Purchase</button>
 
 		<script>
 			const selectedProductId = localStorage.getItem("selectedProductId");
 
 			fetch("data.json")
-				.then((response) => response.json())
+				.then((response) => {
+					if (!response.ok) throw new Error("Error loading product data");
+					return response.json();
+				})
 				.then((data) => {
-					let product;
-					data.categories.some((category) =>
-						category.products.some((item) => {
+					let product = null;
+
+					// Locate the product with the matching ID
+					data.categories.some((category) => {
+						return category.products.some((item) => {
 							if (item.id === selectedProductId) {
 								product = item;
 								return true;
 							}
 							return false;
-						})
-					);
+						});
+					});
+
+					const productDetailsDiv = document.getElementById("product-details");
+					const purchaseButton = document.getElementById("purchase-button");
 
 					if (product) {
-						document.getElementById("product-details").innerHTML = `
-                        <h2>${product.name}</h2>
-                        <img src="assets/${product.image}" alt="${product.name}" />
-                        <p>${product.description}</p>
-                        <p>Price: $${product.price}</p>
-                        <p>Subcategory: ${product.subcategory}</p>
-                    `;
+						productDetailsDiv.innerHTML = `
+							<h2>${product.name}</h2>
+							<p>${product.description}</p>
+							<p>Price: $${product.price}</p>
+							<p>Subcategory: ${product.subcategory}</p>
+						`;
+						purchaseButton.style.display = "block";
 					} else {
-						document.getElementById("product-details").innerHTML = "<p>Product not found.</p>";
+						productDetailsDiv.innerHTML = "<p>Product not found. Please try again later.</p>";
+						console.error(
+							"Selected product ID:",
+							selectedProductId,
+							"does not match any product in data.json."
+						);
 					}
+				})
+				.catch((error) => {
+					document.getElementById("product-details").innerHTML =
+						"<p>Error loading product data. Please try again later.</p>";
+					console.error("Error fetching data:", error);
 				});
 
 			document.getElementById("purchase-button").onclick = function () {
-				alert("Purchase function not yet implemented.");
+				alert("Thank you for your purchase!");
 			};
 		</script>
 	</body>

@@ -6,6 +6,7 @@
 			"subcategories": ["Houses for Sale", "Land for Sale", "Commercial Properties"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Luxury Villa",
 					"description": "Sea-view property in New York",
 					"price": 1146723,
@@ -13,6 +14,7 @@
 					"subcategory": "Houses for Sale"
 				},
 				{
+					"id": "2",
 					"name": "Cozy Apartment",
 					"description": "Renovated property in Miami",
 					"price": 630304,
@@ -20,6 +22,7 @@
 					"subcategory": "Houses for Sale"
 				},
 				{
+					"id": "3",
 					"name": "Modern Condo",
 					"description": "Renovated property in New York",
 					"price": 468193,
@@ -27,6 +30,7 @@
 					"subcategory": "Houses for Sale"
 				},
 				{
+					"id": "4",
 					"name": "Commercial Building",
 					"description": "Sea-view property in Austin",
 					"price": 1113901,
@@ -34,6 +38,7 @@
 					"subcategory": "Commercial Properties"
 				},
 				{
+					"id": "5",
 					"name": "Office Space",
 					"description": "Spacious property in New York",
 					"price": 1130105,
@@ -48,6 +53,7 @@
 			"subcategories": ["Cars", "Motorcycles", "Car Accessories", "Car Parts & Tools"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Chevrolet Silverado",
 					"description": "Off-road Sedan with advanced features",
 					"price": 21187,
@@ -55,6 +61,7 @@
 					"subcategory": "Cars"
 				},
 				{
+					"id": "2",
 					"name": "Honda Civic",
 					"description": "Luxury Truck with advanced features",
 					"price": 57028,
@@ -62,6 +69,7 @@
 					"subcategory": "Cars"
 				},
 				{
+					"id": "3",
 					"name": "Harley Davidson",
 					"description": "Luxury motorcycle for long rides",
 					"price": 75181,
@@ -69,6 +77,7 @@
 					"subcategory": "Motorcycles"
 				},
 				{
+					"id": "4",
 					"name": "Car Stereo System",
 					"description": "Top-tier audio accessory",
 					"price": 47963,
@@ -76,6 +85,7 @@
 					"subcategory": "Car Accessories"
 				},
 				{
+					"id": "5",
 					"name": "Tire Set",
 					"description": "Premium tires for all terrains",
 					"price": 13448,
@@ -84,6 +94,7 @@
 				}
 			]
 		},
+
 		{
 			"id": 3,
 			"name": "Fashion",
@@ -95,6 +106,7 @@
 			],
 			"products": [
 				{
+					"id": "1",
 					"name": "Running Shoes",
 					"description": "Stylish sporty wear from Nike",
 					"price": 140,
@@ -102,6 +114,7 @@
 					"subcategory": "Shoes & Accessories"
 				},
 				{
+					"id": "2",
 					"name": "Evening Gown",
 					"description": "Elegant attire for special occasions",
 					"price": 86,
@@ -109,6 +122,7 @@
 					"subcategory": "Women’s Clothing"
 				},
 				{
+					"id": "3",
 					"name": "Casual Jacket",
 					"description": "Perfect for chilly weather",
 					"price": 204,
@@ -116,6 +130,7 @@
 					"subcategory": "Men’s Clothing"
 				},
 				{
+					"id": "4",
 					"name": "Kids’ Sneakers",
 					"description": "Comfortable shoes for children",
 					"price": 41,
@@ -135,6 +150,7 @@
 			],
 			"products": [
 				{
+					"id": "1",
 					"name": "Dell XPS 13",
 					"description": "Compact device with cutting-edge features",
 					"price": 1370,
@@ -142,6 +158,7 @@
 					"subcategory": "Computers & Tablets"
 				},
 				{
+					"id": "2",
 					"name": "Samsung Galaxy S21",
 					"description": "Budget-friendly smartphone",
 					"price": 1299,
@@ -149,6 +166,7 @@
 					"subcategory": "Mobile Phones & Accessories"
 				},
 				{
+					"id": "3",
 					"name": "Amazon Echo",
 					"description": "Voice-activated smart speaker",
 					"price": 843,
@@ -156,6 +174,7 @@
 					"subcategory": "Smart Home Devices"
 				},
 				{
+					"id": "4",
 					"name": "JBL Speaker",
 					"description": "Portable audio device",
 					"price": 655,
@@ -164,13 +183,13 @@
 				}
 			]
 		},
-
 		{
 			"id": 5,
 			"name": "Home & Living",
 			"subcategories": ["Furniture", "Home Decor", "Kitchen & Dining", "Bedding & Bath"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Memory Foam Mattress",
 					"description": "Modern design from Wayfair",
 					"price": 1072,
@@ -178,6 +197,7 @@
 					"subcategory": "Bedding & Bath"
 				},
 				{
+					"id": "2",
 					"name": "Sectional Sofa",
 					"description": "Modern design from Ikea",
 					"price": 786,
@@ -185,6 +205,7 @@
 					"subcategory": "Furniture"
 				},
 				{
+					"id": "3",
 					"name": "Sectional Sofa",
 					"description": "Elegant design from Ikea",
 					"price": 1190,
@@ -192,6 +213,7 @@
 					"subcategory": "Furniture"
 				},
 				{
+					"id": "4",
 					"name": "Wall Art",
 					"description": "Elegant design from Wayfair",
 					"price": 1380,
@@ -199,6 +221,7 @@
 					"subcategory": "Home Decor"
 				},
 				{
+					"id": "5",
 					"name": "Memory Foam Mattress",
 					"description": "Modern design from Wayfair",
 					"price": 770,
@@ -213,6 +236,7 @@
 			"subcategories": ["Skincare", "Hair Care", "Personal Care", "Supplements & Vitamins"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Vitamin C Tablets",
 					"description": "Hydrating product for daily use",
 					"price": 79,
@@ -220,6 +244,7 @@
 					"subcategory": "Supplements & Vitamins"
 				},
 				{
+					"id": "2",
 					"name": "Face Moisturizer",
 					"description": "Hydrating product for daily use",
 					"price": 39,
@@ -227,6 +252,7 @@
 					"subcategory": "Skincare"
 				},
 				{
+					"id": "3",
 					"name": "Vitamin C Tablets",
 					"description": "Cruelty-free product for daily use",
 					"price": 69,
@@ -234,6 +260,7 @@
 					"subcategory": "Supplements & Vitamins"
 				},
 				{
+					"id": "4",
 					"name": "Vitamin C Tablets",
 					"description": "Cruelty-free product for daily use",
 					"price": 86,
@@ -241,6 +268,7 @@
 					"subcategory": "Supplements & Vitamins"
 				},
 				{
+					"id": "5",
 					"name": "Hair Serum",
 					"description": "Hydrating product for daily use",
 					"price": 22,
@@ -255,6 +283,7 @@
 			"subcategories": ["Activewear", "Fitness Equipment", "Outdoor Gear", "Sports Accessories"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Yoga Mat",
 					"description": "Durable weather-resistant gear",
 					"price": 106,
@@ -262,6 +291,7 @@
 					"subcategory": "Fitness Equipment"
 				},
 				{
+					"id": "2",
 					"name": "Camping Tent",
 					"description": "Durable high-performance gear",
 					"price": 275,
@@ -269,6 +299,7 @@
 					"subcategory": "Outdoor Gear"
 				},
 				{
+					"id": "3",
 					"name": "Tennis Racket",
 					"description": "Durable lightweight gear",
 					"price": 346,
@@ -276,6 +307,7 @@
 					"subcategory": "Sports Accessories"
 				},
 				{
+					"id": "4",
 					"name": "Camping Tent",
 					"description": "Durable high-performance gear",
 					"price": 214,
@@ -283,6 +315,7 @@
 					"subcategory": "Outdoor Gear"
 				},
 				{
+					"id": "5",
 					"name": "Yoga Mat",
 					"description": "Durable lightweight gear",
 					"price": 410,
@@ -297,6 +330,7 @@
 			"subcategories": ["Toys & Games", "Baby Essentials", "School Supplies"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Puzzle Game",
 					"description": "Fun and creative interactive toy",
 					"price": 64,
@@ -304,6 +338,7 @@
 					"subcategory": "Toys & Games"
 				},
 				{
+					"id": "2",
 					"name": "Lego Set",
 					"description": "Fun and creative interactive toy",
 					"price": 19,
@@ -311,6 +346,7 @@
 					"subcategory": "Toys & Games"
 				},
 				{
+					"id": "3",
 					"name": "Puzzle Game",
 					"description": "Fun and creative educational toy",
 					"price": 72,
@@ -318,6 +354,7 @@
 					"subcategory": "School Supplies"
 				},
 				{
+					"id": "4",
 					"name": "Action Figure",
 					"description": "Fun and creative educational toy",
 					"price": 66,
@@ -325,6 +362,7 @@
 					"subcategory": "Toys & Games"
 				},
 				{
+					"id": "5",
 					"name": "Action Figure",
 					"description": "Fun and creative educational toy",
 					"price": 78,
@@ -333,13 +371,13 @@
 				}
 			]
 		},
-
 		{
 			"id": 9,
 			"name": "Groceries & Gourmet",
 			"subcategories": ["Snacks & Beverages", "Cooking Essentials", "Specialty Foods"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Cold Brew Coffee",
 					"description": "Fresh healthy product",
 					"price": 7,
@@ -347,6 +385,7 @@
 					"subcategory": "Snacks & Beverages"
 				},
 				{
+					"id": "2",
 					"name": "Cold Brew Coffee",
 					"description": "Fresh locally sourced product",
 					"price": 9,
@@ -354,6 +393,7 @@
 					"subcategory": "Snacks & Beverages"
 				},
 				{
+					"id": "3",
 					"name": "Artisan Bread",
 					"description": "Fresh locally sourced product",
 					"price": 12,
@@ -361,6 +401,7 @@
 					"subcategory": "Cooking Essentials"
 				},
 				{
+					"id": "4",
 					"name": "Artisan Bread",
 					"description": "Fresh gourmet product",
 					"price": 13,
@@ -368,6 +409,7 @@
 					"subcategory": "Specialty Foods"
 				},
 				{
+					"id": "5",
 					"name": "Artisan Bread",
 					"description": "Fresh locally sourced product",
 					"price": 26,
@@ -382,6 +424,7 @@
 			"subcategories": ["Books", "Movies & TV Shows", "Music"],
 			"products": [
 				{
+					"id": "1",
 					"name": "Vinyl Record",
 					"description": "Inspirational content for all ages",
 					"price": 42,
@@ -389,6 +432,7 @@
 					"subcategory": "Music"
 				},
 				{
+					"id": "2",
 					"name": "Self-help Book",
 					"description": "Inspirational content for all ages",
 					"price": 44,
@@ -396,6 +440,7 @@
 					"subcategory": "Books"
 				},
 				{
+					"id": "3",
 					"name": "Self-help Book",
 					"description": "Award-winning content for all ages",
 					"price": 25,
@@ -403,6 +448,7 @@
 					"subcategory": "Books"
 				},
 				{
+					"id": "4",
 					"name": "Self-help Book",
 					"description": "Bestselling content for all ages",
 					"price": 20,
@@ -410,6 +456,7 @@
 					"subcategory": "Books"
 				},
 				{
+					"id": "5",
 					"name": "Vinyl Record",
 					"description": "Bestselling content for all ages",
 					"price": 44,
