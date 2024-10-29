@@ -10,7 +10,7 @@
 		<div id="results"></div>
 
 		<script>
-			const searchQuery = localStorage.getItem("searchQuery");
+			const searchQuery = localStorage.getItem("searchQuery").toLowerCase();
 
 			fetch("data.json")
 				.then((response) => response.json())
@@ -27,24 +27,24 @@
 							resultsDiv.appendChild(categoryDiv);
 						}
 
-						category.subcategories.forEach((subcategory) => {
-							// Check if the search query matches the subcategory name
-							if (subcategory.name.toLowerCase().includes(searchQuery)) {
-								found = true;
-								const subcategoryDiv = document.createElement("div");
-								subcategoryDiv.innerHTML = `<h3>Subcategory: ${subcategory.name}</h3>`;
-								resultsDiv.appendChild(subcategoryDiv);
-							}
+						// Search within subcategories and products
+						category.products.forEach((product) => {
+							const matchesName = product.name.toLowerCase().includes(searchQuery);
+							const matchesDescription = product.description.toLowerCase().includes(searchQuery);
+							const matchesSubcategory = product.subcategory.toLowerCase().includes(searchQuery);
 
-							subcategory.items.forEach((item) => {
-								// Check if the search query matches the product name
-								if (item.name.toLowerCase().includes(searchQuery)) {
-									found = true;
-									const itemDiv = document.createElement("div");
-									itemDiv.innerHTML = `<h3>Product: ${item.name}</h3><p>Brand: ${item.brand}</p><p>Price: ${item.price}</p>`;
-									resultsDiv.appendChild(itemDiv);
-								}
-							});
+							if (matchesName || matchesDescription || matchesSubcategory) {
+								found = true;
+								const productDiv = document.createElement("div");
+								productDiv.innerHTML = `
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <p>Price: $${product.price}</p>
+                                <p>Subcategory: ${product.subcategory}</p>
+                                <img src="${product.image}" alt="${product.name}" width="100">
+                            `;
+								resultsDiv.appendChild(productDiv);
+							}
 						});
 					});
 
