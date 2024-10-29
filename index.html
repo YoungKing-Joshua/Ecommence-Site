@@ -32,8 +32,8 @@
 
 			<div class="right-section">
 				<div class="search-bar">
-					<!-- <input type="text" placeholder="Search for products..." /> -->
-					<button class="search-button">Login</button>
+					<input type="text" id="search-input" placeholder="Search for products..." />
+					<button class="search-btn" onclick="searchProducts()">Search</button>
 				</div>
 			</div>
 		</header>
@@ -63,6 +63,10 @@
 			</section>
 			<section class="categories">
 				<h2>Categories</h2>
+				<div class="category-list" id="category-buttons"></div>
+			</section>
+			<!-- <section class="categories">
+				<h2>Categories</h2>
 				<div class="category-list">
 					<div class="category" id="home">
 						<p>Home</p>
@@ -84,7 +88,7 @@
 						<p>Outdoor</p>
 						<img src="assets/products.png" alt="Outdoor &" />
 					</div>
-				
+				 -->
 					<!-- <div class="category" id="home">
 						<p>Home</p>
 						<img src="assets/mansion.png" alt="Home &" />
@@ -106,7 +110,7 @@
 						<img src="assets/products.png" alt="Outdoor &" />
 					</div>
 				</div> -->
-			</section>
+			<!-- </section> -->
 			<section class="featured-products">
 				<h2>Trending Now</h2>
 				<div class="product-grid">
