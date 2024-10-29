@@ -3,140 +3,52 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Property Listings - Tonaton</title>
+		<title>Products</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<header class="header">
-			<h1>Tonaton Property Listings</h1>
-		</header>
+		<h1>Products</h1>
 
-		<div class="container">
-			<div class="search-bar">
-				<input type="text" placeholder="Search in Property" aria-label="Property search" />
-			</div>
-
-			<div class="main-content">
-				<aside class="filters">
-					<h3>Categories</h3>
-					<ul>
-						<li><a href="#">New Builds</a></li>
-						<li><a href="#">Houses & Apartments for Rent</a></li>
-						<li><a href="#">Houses & Apartments for Sale</a></li>
-						<li><a href="#">Land & Plots for Rent</a></li>
-					</ul>
-
-					<h3>Location</h3>
-
-					<h3>Price, GHC</h3>
-					<form>
-						<input type="number" placeholder="Min" /> - <input type="number" placeholder="Max" />
-						<button type="submit">Apply</button>
-					</form>
-
-					<h3>Verified Sellers</h3>
-					<label><input type="checkbox" /> Verified Sellers</label><br />
-					<label><input type="checkbox" /> Unverified Sellers</label><br />
-
-					<h3>Discount</h3>
-					<label><input type="checkbox" /> Yes</label><br />
-					<label><input type="checkbox" /> No</label>
-				</aside>
-
-				<div class="listings">
-					<!-- Listings will be inserted here by JavaScript -->
-					<div id="loading">Loading properties...</div>
-				</div>
-			</div>
-
-			<div class="pagination">
-				<a href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">3</a>
-				<span>...</span>
-				<a href="#">499</a>
-			</div>
-		</div>
-
-		<footer class="footer">
-			<div class="footer-links">
-				<div>
-					<h4>About Us</h4>
-					<a href="#">Privacy Policy</a>
-				</div>
-				<div>
-					<h4>Support</h4>
-					<a href="mailto:support@tonaton.com">support@tonaton.com</a>
-				</div>
-				<div>
-					<h4>Follow Us</h4>
-					<a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-				</div>
-			</div>
-			<p>© 2024 Tonaton Ghana</p>
-		</footer>
+		<main>
+			<div class="product-list-container" id="product-list"></div>
+		</main>
 
 		<script>
-			// Fetch data from JSON and display listings
-			async function loadListings() {
-				const listingsContainer = document.querySelector(".listings");
-				const loadingIndicator = document.getElementById("loading");
-				loadingIndicator.style.display = "block"; // Show loading indicator
+			const selectedCategoryId = localStorage.getItem("selectedCategory");
 
-				try {
-					const response = await fetch("properties.json");
+			fetch("data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					const productListDiv = document.getElementById("product-list");
 
-					// Check if response is ok (status 200-299)
-					if (!response.ok) {
-						throw new Error("Network response was not ok: " + response.statusText);
+					// Find the category using the selected category ID
+					const selectedCategory = data.categories.find(
+						(category) => category.id == selectedCategoryId
+					);
+
+					if (selectedCategory) {
+						selectedCategory.products.forEach((product) => {
+							const productDiv = document.createElement("div");
+							productDiv.className = "product-card";
+							productDiv.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image" />
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p class="price">Price: $${product.price.toFixed(2)}</p>
+                <button onclick="viewProduct('${product.name}')">View Details</button>
+              `;
+							productListDiv.appendChild(productDiv);
+						});
+					} else {
+						productListDiv.innerHTML = "<p>No products found in this category.</p>";
 					}
+				})
+				.catch((error) => console.error("Error fetching data:", error));
 
-					const properties = await response.json();
-
-					// Clear the loading indicator
-					loadingIndicator.style.display = "none";
-					listingsContainer.innerHTML = ""; // Clear any static content
-
-					if (properties.length === 0) {
-						listingsContainer.innerHTML = "<p>No properties found.</p>";
-						return;
-					}
-
-					properties.forEach((property) => {
-						// Create listing element
-						const listing = document.createElement("div");
-						listing.className = "listing";
-
-						// Create image element
-						const img = document.createElement("img");
-						img.src = property.image;
-						img.alt = property.description;
-
-						// Create listing info container
-						const info = document.createElement("div");
-						info.className = "listing-info";
-
-						// Add price, description, location, and size
-						info.innerHTML = `
-                        <h2>${property.price}</h2>
-                        <p>${property.description}</p>
-                        <p>${property.location}</p>
-                        <p><span class="price">${property.size}</span></p>
-                    `;
-
-						// Append elements to the listing and container
-						listing.appendChild(img);
-						listing.appendChild(info);
-						listingsContainer.appendChild(listing);
-					});
-				} catch (error) {
-					loadingIndicator.style.display = "none"; // Hide loading indicator
-					listingsContainer.innerHTML = `<p>Error loading properties: ${error.message}</p>`;
-				}
+			function viewProduct(productId) {
+				localStorage.setItem("selectedProductId", productId);
+				window.location.href = "product-details.html";
 			}
-
-			// Load listings when the page loads
-			window.onload = loadListings;
 		</script>
 	</body>
 </html>

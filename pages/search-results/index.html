@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search Results</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h1>Search Results</h1>
+
+		<main>
+			<div class="results-container" id="search-results"></div>
+		</main>
+
+		<script>
+			const searchQuery = localStorage.getItem("searchQuery");
+
+			fetch("data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					const resultsDiv = document.getElementById("search-results");
+					const searchResults = [];
+
+					data.categories.forEach((category) => {
+						category.products.forEach((product) => {
+							const nameMatch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+							const categoryMatch = category.name.toLowerCase().includes(searchQuery.toLowerCase());
+							const subcategoryMatch = product.subcategory
+								.toLowerCase()
+								.includes(searchQuery.toLowerCase());
+
+							if (nameMatch || categoryMatch || subcategoryMatch) {
+								searchResults.push({ ...product, categoryName: category.name });
+							}
+						});
+					});
+
+					if (searchResults.length > 0) {
+						searchResults.forEach((product) => {
+							const productDiv = document.createElement("div");
+							productDiv.className = "result-card";
+							productDiv.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="result-image" />
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p class="price">Price: $${product.price.toFixed(2)}</p>
+                <button onclick="viewProduct('${product.id}')">View Details</button>
+              `;
+							resultsDiv.appendChild(productDiv);
+						});
+					} else {
+						resultsDiv.innerHTML = "<p>No products found matching your search.</p>";
+					}
+				});
+
+			function viewProduct(productId) {
+				localStorage.setItem("selectedProductId", productId);
+				window.location.href = "product-details.html";
+			}
+		</script>
+	</body>
+</html>

@@ -164,19 +164,18 @@ body {
 h1 {
 	text-align: center;
 	color: #1e3a8a; /* Dark blue */
-	margin-top: 20px;
+	margin: 20px 0;
 }
 
 /* Main Section Styling */
 main {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	padding: 20px;
-	height: 80vh;
+	min-height: 80vh;
 }
 
-.product-list-container {
+.results-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 20px;
@@ -184,8 +183,8 @@ main {
 	max-width: 1200px;
 }
 
-/* Product Card Styling */
-.product-card {
+/* Search Result Card Styling */
+.result-card {
 	background-color: white;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -194,12 +193,12 @@ main {
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card:hover {
+.result-card:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.product-image {
+.result-image {
 	width: 100%;
 	height: 150px;
 	object-fit: cover;
