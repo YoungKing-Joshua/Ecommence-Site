@@ -7,60 +7,44 @@
 	</head>
 	<body>
 		<h1>Product Details</h1>
-		<div id="product-details">Loading product details...</div>
-		<button id="purchase-button" style="display: none">Purchase</button>
+		<div id="product-details"></div>
 
 		<script>
 			const selectedProductId = localStorage.getItem("selectedProductId");
 
 			fetch("data.json")
-				.then((response) => {
-					if (!response.ok) throw new Error("Error loading product data");
-					return response.json();
-				})
+				.then((response) => response.json())
 				.then((data) => {
-					let product = null;
+					let productFound = false;
+					const productDetailsDiv = document.getElementById("product-details");
 
-					// Locate the product with the matching ID
-					data.categories.some((category) => {
-						return category.products.some((item) => {
-							if (item.id === selectedProductId) {
-								product = item;
-								return true;
+					data.categories.forEach((category) => {
+						category.products.forEach((product) => {
+							if (product.id == selectedProductId) {
+								productFound = true;
+								productDetailsDiv.innerHTML = `
+                                <h2>${product.name}</h2>
+                                <p>${product.description}</p>
+                                <p>Price: $${product.price.toFixed(2)}</p>
+                                <img src="${product.image}" alt="${
+									product.name
+								}" style="width: 300px; height: auto;">
+                                <button onclick="purchaseProduct(${product.id})">Purchase</button>
+                            `;
 							}
-							return false;
 						});
 					});
 
-					const productDetailsDiv = document.getElementById("product-details");
-					const purchaseButton = document.getElementById("purchase-button");
-
-					if (product) {
-						productDetailsDiv.innerHTML = `
-							<h2>${product.name}</h2>
-							<p>${product.description}</p>
-							<p>Price: $${product.price}</p>
-							<p>Subcategory: ${product.subcategory}</p>
-						`;
-						purchaseButton.style.display = "block";
-					} else {
-						productDetailsDiv.innerHTML = "<p>Product not found. Please try again later.</p>";
-						console.error(
-							"Selected product ID:",
-							selectedProductId,
-							"does not match any product in data.json."
-						);
+					if (!productFound) {
+						productDetailsDiv.innerHTML = "<p>Product not found.</p>";
 					}
 				})
-				.catch((error) => {
-					document.getElementById("product-details").innerHTML =
-						"<p>Error loading product data. Please try again later.</p>";
-					console.error("Error fetching data:", error);
-				});
+				.catch((error) => console.error("Error fetching data:", error));
 
-			document.getElementById("purchase-button").onclick = function () {
-				alert("Thank you for your purchase!");
-			};
+			function purchaseProduct(productId) {
+				alert("Proceed to payment for Product ID: " + productId);
+				// Redirect or other purchase logic goes here
+			}
 		</script>
 	</body>
 </html>

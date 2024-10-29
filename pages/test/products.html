@@ -17,7 +17,6 @@
 				.then((data) => {
 					const productListDiv = document.getElementById("product-list");
 
-					// Find the category using the selected category ID
 					const selectedCategory = data.categories.find(
 						(category) => category.id == selectedCategoryId
 					);
@@ -26,12 +25,14 @@
 						selectedCategory.products.forEach((product) => {
 							const productDiv = document.createElement("div");
 							productDiv.innerHTML = `
-								<h3>${product.name}</h3>
-								<p>${product.description}</p>
-								<p>Price: $${product.price.toFixed(2)}</p>
-								<img src="${product.image}" alt="${product.name}" style="width: 200px; height: auto;">
-								<button onclick="viewProduct('${product.name}')">View Details</button>
-							`;
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price.toFixed(2)}</p>
+                            <img src="${product.image}" alt="${
+								product.name
+							}" style="width: 200px; height: auto;">
+                            <button onclick="viewProduct(${product.id})">View Details</button>
+                        `;
 							productListDiv.appendChild(productDiv);
 						});
 					} else {
