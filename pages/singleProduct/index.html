@@ -90,3 +90,42 @@
 		</footer>
 	</body>
 </html>
+<script>
+	// Fetch Categories from JSON and Display as Dropdown
+	fetch("../../data.json")
+		.then((response) => response.json())
+		.then((data) => {
+			const categoriesDropdown = document.getElementById("categories");
+			const categoryButtons = document.getElementById("category-buttons");
+
+			data.categories.forEach((category) => {
+				// Add category to dropdown
+				const dropdownItem = document.createElement("li");
+				const dropdownLink = document.createElement("a");
+				dropdownLink.href = "#";
+				dropdownLink.textContent = category.name;
+				dropdownLink.onclick = () => selectCategory(category.id);
+				dropdownItem.appendChild(dropdownLink);
+				categoriesDropdown.appendChild(dropdownItem);
+
+				// Add category to buttons section
+				const button = document.createElement("button");
+				button.textContent = category.name;
+				button.onclick = () => selectCategory(category.id);
+				categoryButtons.appendChild(button);
+			});
+		});
+
+	// Save selected category and redirect to products page
+	function selectCategory(categoryId) {
+		localStorage.setItem("selectedCategory", categoryId);
+		window.location.href = "products.html";
+	}
+
+	// Search Products and Redirect to Search Results Page
+	function searchProducts() {
+		const searchQuery = document.getElementById("search-input").value.toLowerCase();
+		localStorage.setItem("searchQuery", searchQuery);
+		window.location.href = "search-results.html";
+	}
+</script>

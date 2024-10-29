@@ -39,7 +39,7 @@
 			const subcategorySelect = document.getElementById("subcategory");
 
 			// Load categories and update category dropdown
-			fetch("data.json")
+			fetch("../../data.json")
 				.then((response) => response.json())
 				.then((data) => {
 					data.categories.forEach((category) => {
@@ -55,7 +55,7 @@
 				const selectedCategoryId = categorySelect.value;
 				subcategorySelect.innerHTML = "<option value=''>Select a subcategory</option>";
 
-				fetch("data.json")
+				fetch("../../data.json")
 					.then((response) => response.json())
 					.then((data) => {
 						const category = data.categories.find((cat) => cat.id == selectedCategoryId);

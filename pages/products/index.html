@@ -7,6 +7,34 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
+		<header>
+			<div class="logo">
+				<h1>TradeSwift</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li>
+						<a href="#">Categories</a>
+						<ul class="dropdown" id="categories"></ul>
+					</li>
+					<li><a href="#">New Arrivals</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="about.html">About Us</a></li>
+				</ul>
+				<div class="cart">
+					<a href="#">
+						<img src="cart-icon.png" alt="Cart" />
+						<span class="cart-count">0</span>
+					</a>
+				</div>
+			</nav>
+
+			<!-- <div class="right-section">
+				<div class="search-bar">
+					<button class="search-button">Login</button>
+				</div> -->
+		</header>
 		<h1>Products</h1>
 
 		<main>
@@ -16,7 +44,7 @@
 		<script>
 			const selectedCategoryId = localStorage.getItem("selectedCategory");
 
-			fetch("data.json")
+			fetch("../../data.json")
 				.then((response) => response.json())
 				.then((data) => {
 					const productListDiv = document.getElementById("product-list");
@@ -52,3 +80,42 @@
 		</script>
 	</body>
 </html>
+<script>
+	// Fetch Categories from JSON and Display as Dropdown
+	fetch("../../data.json")
+				.then((response) => response.json())
+				.then((data) => {
+					const categoriesDropdown = document.getElementById("categories");
+					const categoryButtons = document.getElementById("category-buttons");
+
+					data.categories.forEach((category) => {
+						// Add category to dropdown
+						const dropdownItem = document.createElement("li");
+						const dropdownLink = document.createElement("a");
+						dropdownLink.href = "#";
+						dropdownLink.textContent = category.name;
+						dropdownLink.onclick = () => selectCategory(category.id);
+						dropdownItem.appendChild(dropdownLink);
+						categoriesDropdown.appendChild(dropdownItem);
+
+						// Add category to buttons section
+						const button = document.createElement("button");
+						button.textContent = category.name;
+						button.onclick = () => selectCategory(category.id);
+						categoryButtons.appendChild(button);
+					});
+				});
+
+			// Save selected category and redirect to products page
+			function selectCategory(categoryId) {
+				localStorage.setItem("selectedCategory", categoryId);
+				window.location.href = "products.html";
+			}
+
+			// Search Products and Redirect to Search Results Page
+			function searchProducts() {
+				const searchQuery = document.getElementById("search-input").value.toLowerCase();
+				localStorage.setItem("searchQuery", searchQuery);
+				window.location.href = "search-results.html";
+			}
+</script>
